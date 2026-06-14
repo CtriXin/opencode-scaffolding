@@ -69,7 +69,23 @@ Expected result:
 - a `pass|partial|fail` record for custom-tool boundary;
 - explicit decision on whether adapter MVP may start.
 
-### 3. Draft runner-neutral contracts
+### 3. Align with MMF data-layer launch defaults
+
+Scope:
+
+- consume context/output/thinking/effort from latest-approved capabilities, model-policy, provider-profiles, and explicit launch overrides;
+- avoid model-specific hardcoding in this repo;
+- preserve WebUI as persistent config owner and TUI as launch-time override surface.
+
+Expected result:
+
+- OpenCode generated config follows MMS/MMF data truth;
+- this repo does not create a parallel model registry;
+- max output / 1M context / effort behavior is explainable from data sources.
+
+See `docs/mmf-data-layer-alignment.md`.
+
+### 4. Draft runner-neutral contracts
 
 Scope:
 
@@ -83,7 +99,7 @@ Expected result:
 - contracts survive OpenCode internal changes;
 - MMF/OpenCode-specific details stay outside neutral contracts.
 
-### 4. Draft OpenCode reference adapter MVP
+### 5. Draft OpenCode reference adapter MVP
 
 Only start after the boundary checks are acceptable.
 
@@ -106,7 +122,7 @@ Expected result:
 - Do not write global `~/.config/opencode/**`.
 - Do not let custom tools read or write canonical state directly.
 - Do not treat `experimental.session.compacting` as stable continuity truth.
-- Do not start adapter MVP before the boundary checks are recorded.
+- Do not start adapter MVP before the boundary checks and MMF data-layer alignment are recorded.
 
 ## PR And Committee Rule
 

@@ -24,6 +24,7 @@ It is intentionally not an OpenCode fork, not a patched OpenCode distribution, a
 | `examples/` | Non-secret examples for generated profile/pack manifests. |
 | `governance/` | PR-first committee review rules for future iterations. |
 | `STATUS_AND_ROADMAP.md` | Current status, next work, and expected results. |
+| `docs/` | Cross-repo alignment notes, including MMF data-layer assumptions. |
 
 ## Design Rules
 
