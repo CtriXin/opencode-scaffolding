@@ -14,6 +14,7 @@ This repo is the source of truth for OpenCode-adjacent capability scaffolding.
 
 - The initial seed may land on `main`.
 - All later iterations should use a branch and PR.
+- Follow `governance/committee-pr-contract.md` for committee-reviewed PRs.
 - Committee review is for PR review and decision support, not for mutating files directly.
 - A host may summarize committee votes, but the host must preserve dissent and evidence quality.
 
