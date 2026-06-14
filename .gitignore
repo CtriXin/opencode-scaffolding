@@ -1,0 +1,10 @@
+# Local AI/evidence state
+.ai/
+.agent.local/
+
+# Spike scratch artifacts
+spikes/**/artifacts/
+
+# Editor/OS noise
+.DS_Store
+*.swp
