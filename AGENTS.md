@@ -6,6 +6,7 @@ This repo is the source of truth for OpenCode-adjacent capability scaffolding.
 
 - Do not fork or patch OpenCode core here.
 - Prefer official OpenCode surfaces: plugins, custom tools, skills, agents, permissions, and documented/observed hooks.
+- Design every capability as a removable slot: if OpenCode later ships an overlapping official feature, this repo must be able to disable or delete the slot without rewriting neutral contracts.
 - Keep contracts runner-neutral; OpenCode-specific assumptions belong under `adapters/opencode/` or `spikes/`.
 - Keep MMF binding session-local. Do not write real `~/.config/mms/**` or global `~/.config/opencode/**` from this repo.
 - `state-core` remains the canonical task-state and done-gate owner; adapters must not read or write canonical state files directly.
