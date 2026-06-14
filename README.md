@@ -22,6 +22,8 @@ It is intentionally not an OpenCode fork, not a patched OpenCode distribution, a
 | `profiles/` | MMF/MMS profile binding documents. Profiles decide how a capability pack is attached, not what task truth means. |
 | `spikes/` | Proof-first validation work such as hook-fit spikes, evidence templates, and bounded experiments before adapter MVP work. |
 | `examples/` | Non-secret examples for generated profile/pack manifests. |
+| `governance/` | PR-first committee review rules for future iterations. |
+| `STATUS_AND_ROADMAP.md` | Current status, next work, and expected results. |
 
 ## Design Rules
 
@@ -45,3 +47,14 @@ MMF profile
 ```
 
 This keeps the value portable. If OpenCode changes its internal scheduler or storage, only `adapters/opencode/` should need updates.
+
+## Current Status
+
+The current seed is complete and pushed. Adapter MVP work should not start until the next boundary kill-switch checks are recorded.
+
+See `STATUS_AND_ROADMAP.md` for:
+
+- what is already done;
+- what should be done next;
+- what result each next step should produce;
+- what must not be done yet.
