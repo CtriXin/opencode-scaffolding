@@ -2,6 +2,7 @@
 
 Date: 2026-06-14
 Status: seeded, governance-ready, not implementation-ready
+Design invariant: every capability must be removable when OpenCode grows an official equivalent.
 
 ## Current Result
 
@@ -35,7 +36,7 @@ MMF profile
   -> state-core remains canonical task-state and done-gate owner
 ```
 
-This keeps the design resilient when OpenCode changes internally.
+This keeps the design resilient when OpenCode changes internally. Any overlapping official OpenCode feature should replace the local slot, not force a rewrite.
 
 ## What To Do Next
 
@@ -69,7 +70,23 @@ Expected result:
 - a `pass|partial|fail` record for custom-tool boundary;
 - explicit decision on whether adapter MVP may start.
 
-### 3. Draft runner-neutral contracts
+### 3. Align with MMF data-layer launch defaults
+
+Scope:
+
+- consume context/output/thinking/effort from latest-approved capabilities, model-policy, provider-profiles, and explicit launch overrides;
+- avoid model-specific hardcoding in this repo;
+- preserve WebUI as persistent config owner and TUI as launch-time override surface.
+
+Expected result:
+
+- OpenCode generated config follows MMS/MMF data truth;
+- this repo does not create a parallel model registry;
+- max output / 1M context / effort behavior is explainable from data sources.
+
+See `docs/mmf-data-layer-alignment.md`.
+
+### 4. Draft runner-neutral contracts
 
 Scope:
 
@@ -83,7 +100,7 @@ Expected result:
 - contracts survive OpenCode internal changes;
 - MMF/OpenCode-specific details stay outside neutral contracts.
 
-### 4. Draft OpenCode reference adapter MVP
+### 5. Draft OpenCode reference adapter MVP
 
 Only start after the boundary checks are acceptable.
 
@@ -98,6 +115,16 @@ Expected result:
 
 - a minimal OpenCode session can hydrate bounded context, expose approved tools, dispatch bounded agents, and close through `state-core` done-gate without patching OpenCode core.
 
+## Official-Upgrade Replaceability Rule
+
+Every local capability must answer three questions before implementation:
+
+- What official OpenCode surface does it attach to today?
+- If OpenCode ships this feature natively later, what file/slot/flag disables our copy?
+- What runner-neutral contract remains after our adapter code is removed?
+
+A capability that cannot be removed cleanly is not allowed to become part of the adapter MVP.
+
 ## What Not To Do Yet
 
 - Do not patch OpenCode core.
@@ -106,7 +133,7 @@ Expected result:
 - Do not write global `~/.config/opencode/**`.
 - Do not let custom tools read or write canonical state directly.
 - Do not treat `experimental.session.compacting` as stable continuity truth.
-- Do not start adapter MVP before the boundary checks are recorded.
+- Do not start adapter MVP before the boundary checks, MMF data-layer alignment, and official-upgrade removal path are recorded.
 
 ## PR And Committee Rule
 

@@ -113,7 +113,8 @@ A PR must not pass committee review if it:
 - writes real MMS or OpenCode global config;
 - exposes API keys, OAuth state, account identity, or real-home auth material;
 - creates a public MMS mode without explicit human direction;
-- treats `experimental.session.compacting` as stable continuity truth without fresh evidence.
+- treats `experimental.session.compacting` as stable continuity truth without fresh evidence;
+- adds a local capability without a documented removal/disable path for future official OpenCode overlap.
 
 ## Host Decision Packet
 
